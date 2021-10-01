@@ -1,0 +1,47 @@
+#https://www.youtube.com/watch?v=jk_0T3ge50c
+https://www.youtube.com/watch?v=k57RRoFyeqI
+
+show ip int brief
+
+true guide first router:
+ssh developer@10.10.20.161
+password
+open lab_id/dev_id/console[0 | 1]
+
+ena
+conf term
+host R1
+no ip domain-lookup
+line con 0
+logging synchronous
+exec-timeout 0 0
+int gig 0/0
+ip address 10.1.1.1 255.255.255.252
+no shut
+end
+wr
+
+true guide second router:
+ssh developer@10.10.20.161
+password
+open lab_id/dev_id/console[0 | 1]
+
+ena
+conf term
+ip domain-lookup
+line con 0
+exec-timeout 0 0
+logging synchronous
+int gig 0/1
+ip address 10.1.1.2 255.255.255.252
+no shutdown
+end
+wr
+ping 10.1.1.1
+
+
+
+
+
+no snmp-server community comaccess | Removes the community string from the configuration.
+
