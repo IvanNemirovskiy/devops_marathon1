@@ -1,2 +1,2 @@
-# devops_marathon1
+# devops_marathon
 sprints and donut
